@@ -1,0 +1,54 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:james="https://jamesnet.dev/xaml/presentation"
+    xmlns:units="clr-namespace:BitEarthworm.UI.Units">
+
+    <Style TargetType="{x:Type units:BackgroundGrid}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type units:BackgroundGrid}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="background" RepeatBehavior="Forever">
+                            <james:ThickItem
+                                BeginTime="0:0:3"
+                                Mode="EaseIn"
+                                TargetName="WaveGreen"
+                                Property="Margin"
+                                To="0,0,0,-900"
+                                Duration="0:0:10" />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Grid
+                            x:Name="WaveGreen"
+                            Width="{TemplateBinding Width}"
+                            Height="150"
+                            Margin="0,0,0,850">
+                            <Grid.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Offset="0" Color="#232323" />
+                                    <GradientStop Offset="0.5" Color="#00fe02" />
+                                    <GradientStop Offset="1" Color="#232323" />
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                        </Grid>
+                        <ItemsPresenter />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Window.Loaded">
+                            <BeginStoryboard Storyboard="{StaticResource background}" />
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="30" Rows="30" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

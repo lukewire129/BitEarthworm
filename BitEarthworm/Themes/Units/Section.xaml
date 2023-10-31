@@ -1,0 +1,47 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:james="https://jamesnet.dev/xaml/presentation"
+    xmlns:units="clr-namespace:BitEarthworm.UI.Units">
+    <Style TargetType="{x:Type units:Section}">
+        <Setter Property="Width" Value="30" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type units:Section}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="background">
+                            <james:ColorItem
+                                Mode="EaseIn"
+                                TargetName="border"
+                                Property="(Background).(SolidColorBrush.Color)"
+                                From="#00fe02"
+                                To="#232323"
+                                Duration="0:0:0.5" />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid Background="Transparent">
+                        <Border
+                            x:Name="border"
+                            Margin="1"
+                            Background="#232323"
+                            BorderBrush="Transparent" />
+                        <Border
+                            BorderBrush="black"
+                            BorderThickness="1"
+                            Opacity="0.5" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource background}" />
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,6 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/BitEarthworm;component/Themes/Units/Section.xaml" />
+        <ResourceDictionary Source="/BitEarthworm;component/Themes/Units/BackgroundGrid.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
