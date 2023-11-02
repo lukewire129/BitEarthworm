@@ -12,7 +12,7 @@
                         <Storyboard x:Key="background" RepeatBehavior="Forever">
                             <james:ThickItem
                                 BeginTime="0:0:3"
-                                Mode="EaseIn"
+                                Mode="CubicEaseInOut"
                                 TargetName="WaveGreen"
                                 Property="Margin"
                                 To="0,0,0,-900"

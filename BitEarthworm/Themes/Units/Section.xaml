@@ -14,7 +14,7 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="background">
                             <james:ColorItem
-                                Mode="EaseIn"
+                                Mode="CubicEaseInOut"
                                 TargetName="border"
                                 Property="(Background).(SolidColorBrush.Color)"
                                 From="#00fe02"
