@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace DemoApp
 {
@@ -14,9 +8,9 @@ namespace DemoApp
     public class Starter
     {
         [STAThread]
-static void Main(string[] args)
+        static void Main(string[] args)
         {
-            new App().Run();
+            new App ().Run ();
         }
     }
 }
